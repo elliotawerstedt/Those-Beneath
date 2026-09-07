@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://85oh62cmjjit"]
+
+[ext_resource type="Script" uid="uid://cptyr1ble3v7l" path="res://scripts/fishing_button.gd" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://do2jcr0e0t3xe" path="res://scripts/main.gd" id="1_rarhs"]
+[ext_resource type="Script" uid="uid://gd8hohe7fpyb" path="res://scripts/story_console_listener.gd" id="2_rvslj"]
+[ext_resource type="Script" uid="uid://bxkq71tv6j1wl" path="res://scripts/intro_sequence.gd" id="2_vcsgt"]
+[ext_resource type="Script" uid="uid://du1xxmq1t4yol" path="res://merchant_timer.gd" id="3_0bbpv"]
+
+[node name="Main" type="Node" unique_id=36987355]
+script = ExtResource("1_rarhs")
+
+[node name="DefaultBackground" type="ColorRect" parent="." unique_id=1957764624]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="IntroScreen" type="Control" parent="." unique_id=1765004103]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_vcsgt")
+
+[node name="Background" type="ColorRect" parent="IntroScreen" unique_id=1894914279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="IntroLabel" type="RichTextLabel" parent="IntroScreen" unique_id=634447868]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+text = "INTRO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameScreen" type="Control" parent="." unique_id=1763042872]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="GameScreen" unique_id=157744749]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FishingButton" type="Button" parent="GameScreen" unique_id=1254204355]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 416.0
+offset_right = 1132.0
+offset_bottom = 601.0
+text = "FISH"
+script = ExtResource("1_elqb8")
+
+[node name="StoryConsoleListener" type="Node" parent="GameScreen" unique_id=985974392]
+script = ExtResource("2_rvslj")
+
+[node name="MerchantCounterTimer" type="Timer" parent="GameScreen" unique_id=1542116540]
+script = ExtResource("3_0bbpv")
