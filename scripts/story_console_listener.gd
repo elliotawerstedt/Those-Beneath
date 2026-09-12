@@ -28,6 +28,7 @@ func _on_story_event_triggered(event_id: String) -> void:
 		"normal_fish_catch": "A decent catch. Nothing to write home about.",
 		"big_fish_catch": "The line strains -- this one's bigger than usual. Your heart pounds as you haul it in.",
 		"massive_fish_catch": "The rod nearly bends double. Whatever's on the other end, it's enormous -- maybe the biggest thing you've ever pulled from this water.",
+		"merchant_approaches": "A weathered figure trudges down the dock toward you, eyeing your catch. \"Selling today?\"",
 	}
 
 	var text: String = passages.get(event_id, "Something happens, but you're not sure what.")

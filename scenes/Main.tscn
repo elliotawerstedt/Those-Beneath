@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://gd8hohe7fpyb" path="res://scripts/story_console_listener.gd" id="2_rvslj"]
 [ext_resource type="Script" uid="uid://bxkq71tv6j1wl" path="res://scripts/intro_sequence.gd" id="2_vcsgt"]
 [ext_resource type="Script" uid="uid://du1xxmq1t4yol" path="res://merchant_timer.gd" id="3_0bbpv"]
+[ext_resource type="FontFile" uid="uid://d4wsi8sf2px7" path="res://assets/fonts/titles/Kelly_Slab/KellySlab-Regular.ttf" id="3_c01mt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c01mt"]
+bg_color = Color(1, 0, 0.21176471, 0.08235294)
 
 [node name="Main" type="Node" unique_id=36987355]
 script = ExtResource("1_rarhs")
@@ -44,6 +48,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_c01mt")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
 text = "INTRO"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,6 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="GameScreen" unique_id=157744749]
 layout_mode = 1
@@ -64,6 +72,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="FishingButton" type="Button" parent="GameScreen" unique_id=1254204355]
 layout_mode = 0
@@ -79,3 +88,56 @@ script = ExtResource("2_rvslj")
 
 [node name="MerchantCounterTimer" type="Timer" parent="GameScreen" unique_id=1542116540]
 script = ExtResource("3_0bbpv")
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen" unique_id=113409585]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -400.0
+offset_right = 1920.0
+grow_vertical = 0
+color = Color(1, 1, 1, 0.078431375)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="GameScreen" unique_id=794117090]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -546.0
+offset_top = -381.0
+offset_right = 938.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="GameScreen" unique_id=1631999991]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -937.0
+offset_top = -381.0
+offset_right = -580.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="GameScreen" unique_id=73927810]
+modulate = Color(1, 0, 0.32156864, 1)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 24.0
+offset_right = 91.0
+offset_bottom = 423.0
+theme_override_styles/background = SubResource("StyleBoxFlat_c01mt")
+value = 50.0
+fill_mode = 3
+show_percentage = false
