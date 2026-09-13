@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://do2jcr0e0t3xe" path="res://scripts/main.gd" id="1_rarhs"]
 [ext_resource type="Script" uid="uid://gd8hohe7fpyb" path="res://scripts/story_console_listener.gd" id="2_rvslj"]
 [ext_resource type="Script" uid="uid://bxkq71tv6j1wl" path="res://scripts/intro_sequence.gd" id="2_vcsgt"]
-[ext_resource type="Script" uid="uid://du1xxmq1t4yol" path="res://merchant_timer.gd" id="3_0bbpv"]
+[ext_resource type="Script" uid="uid://du1xxmq1t4yol" path="res://scripts/merchant_timer.gd" id="3_0bbpv"]
 [ext_resource type="FontFile" uid="uid://d4wsi8sf2px7" path="res://assets/fonts/titles/Kelly_Slab/KellySlab-Regular.ttf" id="3_c01mt"]
 [ext_resource type="Script" uid="uid://crauphj80ljxr" path="res://scripts/story_log.gd" id="7_nxtc6"]
 [ext_resource type="FontFile" uid="uid://dqsmwxo86k6e7" path="res://assets/fonts/sub_titles/Protest_Revolution/ProtestRevolution-Regular.ttf" id="8_jlsqs"]

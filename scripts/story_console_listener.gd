@@ -16,9 +16,6 @@ extends Node
 ## 3. Run the scene, click your fishing button, watch the Output console
 
 
-@onready var story_log: ScrollContainer = $"../StoryLog"
-
-
 
 func _ready() -> void:
 	Events.story_event_triggered.connect(_on_story_event_triggered)
@@ -36,5 +33,5 @@ func _on_story_event_triggered(event_id: String) -> void:
 	}
 
 	var text: String = passages.get(event_id, "Something happens, but you're not sure what.")
-	story_log.add_line("[STORY EVENT: %s] %s" % [event_id, text])
+	Events.print_text.emit("[STORY EVENT: %s] %s" % [event_id, text])
 	print("[STORY EVENT: %s] %s" % [event_id, text])

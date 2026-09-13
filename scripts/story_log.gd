@@ -35,6 +35,12 @@ extends ScrollContainer
 @export var story_font_size: int = 16
 
 
+
+## Connects Events print_text signal to the print function in this script
+func _ready() -> void:
+	Events.print_text.connect(add_line)
+
+
 ## Appends one new line of text to the bottom of the log and scrolls
 ## down to reveal it. Call this every time you want to add narrative
 ## text -- fishing results, story events, merchant dialogue, etc.

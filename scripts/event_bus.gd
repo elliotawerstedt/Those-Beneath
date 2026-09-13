@@ -34,3 +34,7 @@ signal intro_finished
 ## number of fish caught today, etc). Handy to have from the start even
 ## if you don't use it yet.
 signal stat_changed(stat_name: String, new_value)
+
+
+## Story log is listening for whatever string gets put into this
+signal print_text(text: String) 
