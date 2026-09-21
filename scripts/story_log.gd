@@ -34,23 +34,31 @@ extends ScrollContainer
 ## Font size in pixels for each line. Adjust to taste.
 @export var story_font_size: int = 16
 
+## Delay between each character appearing, in seconds. Smaller = faster.
+## Tune this in the Inspector until it feels right -- try 0.01-0.05.
+@export var typing_speed: float = 0.03
 
 
-## Connects Events print_text signal to the print function in this script
+
 func _ready() -> void:
 	Events.print_text.connect(add_line)
 
 
-## Appends one new line of text to the bottom of the log and scrolls
-## down to reveal it. Call this every time you want to add narrative
-## text -- fishing results, story events, merchant dialogue, etc.
+## Appends one new line of text to the bottom of the log, typed out
+## character by character, and keeps the view scrolled to follow it.
+## Call this every time you want to add narrative text -- fishing
+## results, story events, merchant dialogue, etc.
 func add_line(text: String) -> void:
+	## Flag to tell that something is currently being written here
+	Global.is_narrating = true
+	
 	var line := RichTextLabel.new()
 	line.text = text
 	line.bbcode_enabled = true          # lets you use [i]...[/i] etc. later
 	line.fit_content = true              # label grows to fit its text, no fixed height
 	line.scroll_active = false           # this label itself shouldn't scroll -- the ScrollContainer handles that
 	line.autowrap_mode = TextServer.AUTOWRAP_WORD
+	line.visible_characters = 0           # start fully hidden, typewriter reveals it below
 
 	if story_font:
 		# "normal_font" covers plain text. RichTextLabel also has
@@ -62,11 +70,28 @@ func add_line(text: String) -> void:
 
 	log_container.add_child(line)
 
-	# Wait one frame so the new line's size is actually calculated
-	# before we try to scroll to it -- scrolling immediately would
-	# use the OLD (too-short) content height and land in the wrong spot.
+	# Wait one frame so the new line's full size is calculated before we
+	# scroll to it -- scrolling immediately would use the OLD (too-short)
+	# content height and land in the wrong spot.
 	await get_tree().process_frame
 	_scroll_to_bottom()
+
+	await _type_out_line(line)
+	
+	## To tell flag that narration is complete
+	Global.is_narrating = false
+
+
+## Reveals a line's text one character at a time. Also nudges the scroll
+## position down each character in case a long, wrapping line pushes
+## content further than the initial scroll (e.g. a 4-line paragraph).
+func _type_out_line(line: RichTextLabel) -> void:
+	var total_chars := line.get_total_character_count()
+
+	for i in range(total_chars + 1):
+		line.visible_characters = i
+		_scroll_to_bottom()
+		await get_tree().create_timer(typing_speed).timeout
 
 
 func _scroll_to_bottom() -> void:

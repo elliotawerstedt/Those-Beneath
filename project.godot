@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*uid://ik2jdcptsmin"
 NarrativeManager="*uid://ngauquf86136"
-Counter="*uid://c88yx4bf52v0n"
+Global="*uid://c88yx4bf52v0n"
 
 [display]
 

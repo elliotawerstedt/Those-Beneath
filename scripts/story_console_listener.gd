@@ -29,7 +29,8 @@ func _on_story_event_triggered(event_id: String) -> void:
 		"normal_fish_catch": "A decent catch. Nothing to write home about.",
 		"big_fish_catch": "The line strains -- this one's bigger than usual. Your heart pounds as you haul it in.",
 		"massive_fish_catch": "The rod nearly bends double. Whatever's on the other end, it's enormous -- maybe the biggest thing you've ever pulled from this water.",
-		"merchant_approaches": "A weathered figure trudges down the dock toward you, eyeing your catch. \"Selling today?\"",
+		"merchant_approaches": "A weathered figure trudges down the dock toward you, eyeing your catch. \n Selling today?",
+		"first_abomination_caught": "\".....what.....what the hell is that?\" \n At the end of the line is some kind of disfigured fish. Nothing like anything you've seen before. \n A sudden rush goes to your head. \n You are disgusted by this cursed creature. \n .....and yet.....you want to catch more.",
 	}
 
 	var text: String = passages.get(event_id, "Something happens, but you're not sure what.")

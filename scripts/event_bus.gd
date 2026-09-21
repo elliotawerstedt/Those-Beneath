@@ -35,6 +35,8 @@ signal intro_finished
 ## if you don't use it yet.
 signal stat_changed(stat_name: String, new_value)
 
-
 ## Story log is listening for whatever string gets put into this
 signal print_text(text: String) 
+
+## Signal emits when player can get madness the first time
+signal can_get_madness

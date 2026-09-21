@@ -22,7 +22,23 @@ func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 
+func _process(_delta: float) -> void:
+	## Can't catch fish if there's currently storytelling
+	if Global.is_narrating == true:
+		disabled = true
+	else:
+		disabled = false
+
+
 func _on_pressed() -> void:
+	Global.times_fished += 1 # Fishing counter
+	
+	# Triggers one time after fished a certain amount of times
+	if Global.times_fished > 2 and Global.first_abomination_caught == false:
+		Events.can_get_madness.emit()
+		Events.story_event_triggered.emit("first_abomination_caught")
+		return
+
 	catch_fish()
 
 

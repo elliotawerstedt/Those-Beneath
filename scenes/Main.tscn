@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://du1xxmq1t4yol" path="res://scripts/merchant_timer.gd" id="3_0bbpv"]
 [ext_resource type="FontFile" uid="uid://d4wsi8sf2px7" path="res://assets/fonts/titles/Kelly_Slab/KellySlab-Regular.ttf" id="3_c01mt"]
 [ext_resource type="Script" uid="uid://crauphj80ljxr" path="res://scripts/story_log.gd" id="7_nxtc6"]
+[ext_resource type="Script" uid="uid://v13ol7i2csyh" path="res://scenes/madness_bar.gd" id="7_q8u5g"]
 [ext_resource type="FontFile" uid="uid://dqsmwxo86k6e7" path="res://assets/fonts/sub_titles/Protest_Revolution/ProtestRevolution-Regular.ttf" id="8_jlsqs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c01mt"]
@@ -132,7 +133,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 1)
 
-[node name="ProgressBar" type="ProgressBar" parent="GameScreen" unique_id=73927810]
+[node name="MadnessBar" type="ProgressBar" parent="GameScreen" unique_id=73927810]
 modulate = Color(1, 0, 0.32156864, 1)
 layout_mode = 0
 offset_left = 31.0
@@ -143,6 +144,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_c01mt")
 value = 50.0
 fill_mode = 3
 show_percentage = false
+script = ExtResource("7_q8u5g")
 
 [node name="StoryLog" type="ScrollContainer" parent="GameScreen" unique_id=1407543160]
 layout_mode = 0

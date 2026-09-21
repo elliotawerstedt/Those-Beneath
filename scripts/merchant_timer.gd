@@ -24,7 +24,7 @@ const TIME_UNTIL_MERCHANT: float = 15.0
 func _ready() -> void:
 	wait_time = TIME_UNTIL_MERCHANT
 	one_shot = true      # fires once, not on a repeating loop
-	autostart = true      # starts counting the moment the scene loads
+	#autostart = true      # starts counting the moment the scene loads
 
 	timeout.connect(_on_timeout)
 
