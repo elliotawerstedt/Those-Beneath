@@ -25,6 +25,9 @@ signal fish_caught(fish_data: Dictionary)
 ## text/UI script will use to look up which passage to print.
 signal story_event_triggered(event_id: String)
 
+## Fired when the narration is typed out in the story log
+signal narration_done
+
 ## Fired once, the moment the player finishes clicking through the
 ## opening intro text. main.gd listens for this to swap from the
 ## intro screen to the main game UI.

@@ -1,0 +1,139 @@
+## BRAINSTORM
+
+
+# GAMEPLAY
+	MADNESS METER
+		CATCHING ABOMINATIONS WILL GIVE MADNESS
+		THE MORE MADNESS, THE MORE TWEAKS TO THE TYPEWRITE EG. SLOWER, INCOMPLETE SENTANCES, REPEATING WORDS, COLOR CHANGING
+		
+		# TO DO
+		COME UP WITH A WAY TO CLEAR MADNESS
+		WHAT IS MADNESS FOR?
+			MORE MADNESS, THE BETTER FISH? DARE TO FISH DEEPER?
+		WHY WOULD THE PLAYER NOT WANT TOO MUCH MADNESS?
+		
+
+	# TO DO
+	WHAT SHOULD BE THE GOAL OF THE GAME?
+		IT WILL NOT BE A ROGUELIKE SINCE IT'S NARRATIVE
+	
+	ADD A MERCHANT?
+		SELLING FISH WILL GRANT MADNESS? OR WILL IT REDUCE MADNESS?
+			SHOULD THE MERCHANT GET AFFECTED?
+			IS THE MERCHANT AN ELDER GOD?
+				SELL HIM ENOUGH AMOUNT OF ABOMINATIONS TO ASCEND? OR LOSE? OR WIN?
+				KEEP THE MERCHANTS CHARACTERISTIC NATURE HIDDEN, SLOWLY REVEAL HIM AS THE GAME GOES ON?
+		IF YOU DON'T SELL THE FISH YOU GO MAD, REACHING THE TOP OF THE MADNESS BAR WILL KILL YOU? WILL THE MERCHANT KILL YOU FOR BEING GREEDY OF HIS CHILDREN?
+			SELLING FISH WILL GRANT YOU RELIEF? STRESS DOWN?
+	
+	ADD MORE EVENTS
+		RARE CATCHES
+		TIMED EVENTS
+		THRESHOLD CATCHES
+		
+DAY AND NIGHT CYCLE?
+
+
+
+
+FRÅN INSPO, (story scripts finns i mappen, continue i chatten):
+	summarize the storywriting and event-track-keeping like you dod above but with the fixes. i like how the log gets a personality the more madness you get please build more on that. Should the madness get lowered as the player sells fish to the merchant or should it stay the same?
+
+Should selling lower madness?
+
+Yes, but only partly. If selling reset the bar, the log would rarely get to show its personality, and the ending wouldn’t depend on what you did. So use two values:
+
+The bar (visible): goes up from catching abominations, carrying unsold ones, and refusing him. Selling lowers it, and that relief is why the player wants to sell.
+The floor (hidden): every sale raises it a little, and it never goes down. The bar can’t drop below it. Selling feels like relief, but each sale takes a bit more of you, so the player is trapped by the thing that helps.
+
+Placeholder numbers to tune: catch +6, carried unsold +1 per cast, refuse +5, sale -8 on the bar and +2 on the floor. At 100% The Hands take over: they hand everything over for 0 pouches, the bar resets to 60, and the floor gains +5. The ending is based on floor + bar at the final cast.
+
+Pouches stay flat (1 per abomination, 2 per large), so there’s no price to farm.
+
+The log’s personality
+
+The log isn’t a narrator. It’s the story writing itself, so it misbehaves in ways that read as the game itself coming apart. Tiers key off the bar:
+
+0-24, Reliable: Plain, short, accurate.
+25-49, Hesitant: It stutters mid-word, repeats a sentence, and quietly changes one word in an old line.
+50-74, Self-correcting: It strikes words out (BBCode [s]) and rewrites them, slips tense and pronouns, and contradicts earlier entries. It calls the merchant different things: “the old man”, then “the host”, then “him”.
+75-99, Taking initiative: It edits past lines while you watch, writes unprompted lines, lets the merchant’s speech leak into your actions, drops punctuation, and says “we” instead of “you”.
+100, The Hands: It writes the handover as your own decision and erases one of your earlier lines.
+
+More ways the log develops a personality:
+
+Callbacks: It quotes your own catches back at you, like the heaviest fish, how many you’ve caught, and the species of the first abomination.
+Mood from your choices: After a sale it turns warm and slow, almost satisfied. After a refusal it gets cold and clipped, and it sulks.
+Hunger: The more you sell, the more its phrasing resembles the merchant’s. By the end it sounds like him.
+Lies: At 50+, it sometimes reports a wrong weight or count.
+Silence: When he speaks at high madness, the log writes nothing and leaves a blank gap.
+Event tracker
+
+Madness-tier beats fire on bar thresholds, not catch counts.
+
+Day 1 (your list, with log notes)
+
+0: Fishing button. Log is plain.
+3: First abomination.
+6: Second abomination. Merchant introduced.
+7: Third abomination. Madness bar introduced.
+9: Merchant offers to buy all abominations. Sell button and pouches appear.
+10: His greed begins to show.
+11: Evening. Bigger abominations available.
+13: Small abomination, he snatches it and eats it raw, pays with a pouch. First log tell: one word in an old line changes.
+14: Large abomination, he looms. You leave the fish on the dock and go home for the night.
+
+Day 2
+
+0: Fog. The fish you left is gone, with drag marks into the water. He sits at the end of the dock, dry. His shop opens on a cloth.
+1: A normal perch. He says, “Not those.”
+3: Abomination. If you carry 2 or more unsold, the bucket hums and the log skips a line.
+4: Heavier line for sale, “for the lost ones”. First purchase.
+6: Abomination with a human mouth that opens and closes with your breathing.
+7: He greets you by name.
+8: Rain falls everywhere except around him, and his footprints stay wet.
+9: Lore: the town used to leave the first catch of each season on the dock. “Nobody remembers why. The water does.”
+10: Small abomination. The coin in the pouch is a warm scale that pulses once.
+11: Evening. The tide goes out too far and reveals crusted dock posts.
+12: If you’ve refused once: “I can wait.”
+13: Large abomination, still alive, with an eye the same color as his. His hands tremble.
+14: He asks you to come early tomorrow. Your reflection in the window is wet.
+
+Day 3
+
+0: The dock is under shallow water though it hasn’t rained. He faces the lake.
+1: Every catch is an abomination now.
+3: He buys without turning. The pouch holds a wedding ring.
+4: Lore: “You’re the fortieth. Or the four-hundredth. They stop counting.”
+6: The log writes a line you didn’t trigger (“You were never fishing”), then deletes it.
+8: “One more, and I will have what I came for. It comes to a fisherman.”
+9: The lake empties and a drowned town shows. He walks on it dry and points: cast there.
+10: He asks for everything and offers no pouches. Past 100%, The Hands do it.
+11: Final cast. The line goes taut and something pulls you.
+12: Ending.
+
+Refusal escalation: First, “I can wait.” Second, the water laps higher and his voice has two tones. Third, the dock is wet to your ankles. He never threatens.
+
+Hidden lore: The lake was a sea. Something old sank beneath the dock, and the abominations are pieces the water keeps trying to return. The merchant is the part of it that walked out to collect them, and every fisherman before you collected too. The log is the lake’s voice. That’s why it sounds more like him the more you sell.
+
+Endings
+Low, The Release: He thanks you, walks into the lake, and the water closes. You never catch another fish, but every morning a scale sits on your pillow.
+Mid, The Succession: He hands you his coat, and you realize he was a fisherman once. A new fisherman steps onto the dock and you hear yourself say, “Selling today?”
+High, The Reveal: He drops the disguise and the log stops following events. It writes faster and faster in words that aren’t yours, then loops back to your first line: “The dock creaks beneath your boots.”
+
+Next build: I can make a madness-driven story_log.gd with the tiers, strike-through rewrites, past-line edits, and unprompted lines, plus a small MadnessManager for the bar and floor. I can also put all of this in a doc you can edit and share, if you’d like.
+
+now write the story for all of these events and dialogue for the merchant and the players thoughts and present it in a text file so i can edit it.
+
+The full script is in story_script.txt, with every event from Day 1 to Day 3 written out. It also covers the merchant’s sale dialogue, refusals, shop lines, the log’s voice for each madness tier, The Hands, and all three endings.
+
+Each block is keyed by an event ID like d2_c9 (Day 2, catch 9), so the IDs can double as your trigger keys in code. Lines are tagged [LOG], [THOUGHT], [MERCHANT] or [SYSTEM], and each beat is marked SLOW or FAST so your pacing contrast carries over. {heaviest}, {species} and {count} are placeholders to fill from game state. The file also uses [Player Name] in a few merchant lines, which I forgot to put in the legend. Either swap it for a name or cut those lines if the player stays nameless.
+
+Some design choices to check:
+
+Lore: The merchant is never explained. Each lore beat (the first-catch tradition, “the fortieth”, the pouches holding what others brought) raises a question without answering it.
+Edited lines: Section 10 lists seven old log lines that rewrite themselves as madness climbs. The first one, “boots” becoming “bones”, is restored in the High ending’s final line.
+Merchant voice: The log picks up his phrases the more you sell, so by Day 3 it sounds like him.
+Placeholders: The ending thresholds, madness numbers and shop effects are all marked as placeholders to tune in playtesting.
+
+I can also turn the Day 1 events into a data-driven trigger file for your NarrativeManager, or build the madness-driven story_log.gd next.

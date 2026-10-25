@@ -26,6 +26,7 @@ extends ScrollContainer
 
 @onready var log_container: VBoxContainer = $LogContainer
 
+
 ## Drag a font file (.ttf/.otf) or FontFile/FontVariation resource into
 ## this slot in the Inspector. Every new line will use it automatically.
 ## Leave empty to just use Godot's default font.
@@ -36,7 +37,7 @@ extends ScrollContainer
 
 ## Delay between each character appearing, in seconds. Smaller = faster.
 ## Tune this in the Inspector until it feels right -- try 0.01-0.05.
-@export var typing_speed: float = 0.03
+@export var typing_speed: float = 0.01
 
 
 
@@ -78,9 +79,7 @@ func add_line(text: String) -> void:
 
 	await _type_out_line(line)
 	
-	## To tell flag that narration is complete
-	Global.is_narrating = false
-
+	Events.narration_done.emit()
 
 ## Reveals a line's text one character at a time. Also nudges the scroll
 ## position down each character in case a long, wrapping line pushes

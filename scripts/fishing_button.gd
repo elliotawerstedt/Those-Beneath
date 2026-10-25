@@ -15,6 +15,7 @@ extends Button
 ## 4. Run the scene and click the button — check the Output console
 
 
+
 func _ready() -> void:
 	# Connect the button's own "pressed" signal to our handler.
 	# (You can also do this by hand in the editor via the Node tab,
@@ -31,6 +32,8 @@ func _process(_delta: float) -> void:
 
 
 func _on_pressed() -> void:
+	disabled = true
+	
 	Global.times_fished += 1 # Fishing counter
 	
 	# Triggers one time after fished a certain amount of times

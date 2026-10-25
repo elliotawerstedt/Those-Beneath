@@ -1,0 +1,39 @@
+Day 1
+	FISH CATCH COUNT:
+		0
+			Fishing buttton is shown
+		
+		3
+			First abomination is caught
+		
+		6
+			Second abomination is caught
+			Merchant is introduced
+		
+		7
+			Third abomination is caught
+			Madness bar is introduced
+		
+		9
+			Merchant offers to buy all abominations caught
+			Sell button is shown
+		
+		10
+			Merchants greed for abominations is beginning to show
+
+		11
+			Evening begins
+			Bigger abominations available to catch
+		
+		13
+			Small abomination is caught
+			The merchant snatches it from your hands, turns his back on you and seems to be eating it raw, and then pays with a money pouch of which you do not know the contents
+		
+		14
+			Large abomination is caught
+			You feel the merchant looming over your shoulder, you leave the fish on the wooden dock, and quickly leave to bay for the night
+
+Day 2
+	FISH CATCH COUNT:
+		0
+			
