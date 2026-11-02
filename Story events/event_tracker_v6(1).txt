@@ -1,0 +1,252 @@
+EVENT TRACKER (v6: the fisherman and the merchant)
+
+Day 1  (merchant level 1: odd, and the player explains everything)
+	FISH CATCH COUNT:
+		0
+			Fishing button is shown
+			Log is plain and reliable
+			The job is established (the rent is due, a fisherman who does not fish is only a man near water)
+
+		1
+			Normal perch
+
+		2
+			Filler cast
+
+		3
+			First abomination is caught
+
+		4
+			Normal roach, the bucket feels watched
+
+		5
+			Bucket water turns cold (player: "the shade")
+
+		6
+			Second abomination is caught
+			Merchant arrives without a sound ("Good water today.")
+			Player explains it away: he was by the boathouse
+
+		7
+			Third abomination is caught
+			Madness bar is introduced
+			SLIP (accident): the merchant says "Three." before the player has said it
+
+		8
+			Gulls fall silent, the merchant moves for the first time
+
+		9
+			Merchant offers to buy all abominations ("Selling today?")
+			Sell button is shown, pouches are introduced
+			Pay: 1 pouch per abomination, 2 for a large one
+			Player: "a buyer is a buyer"
+
+		10
+			Merchant's interest sharpens, he watches every cast
+
+		11
+			Evening begins
+			Bigger abominations available to catch
+			Long shadow, the boards hum (player: "the low sun")
+			The player stays: a day's work is a day's work
+
+		12
+			The water seems higher (player: "the tide")
+
+		13
+			Small abomination is caught
+			The merchant takes it and turns his back, the player hears something and decides not to guess
+			Pays with a warm pouch
+			LOG EDIT 1 (boots becomes bones)
+
+		14
+			Large abomination is caught
+			Merchant looms over your shoulder, you leave the fish on the dock and flee for the night
+			Player catches himself counting casts in the dark
+			DAY 1 ENDS
+
+Day 2  (merchant level 2: odd, and the answers get thin)
+	FISH CATCH COUNT:
+		0
+			The player nearly takes the day off, then thinks of the rent and goes to work
+			Fog. The fish you left is gone, a wet drag-mark leads over the edge
+			Merchant is already seated, coat dry ("I was hoping you would come.")
+			Shop opens
+
+		1
+			Normal catch ("Not those.")
+
+		2
+			Everything bites the way it should, the player waits for the wrong one
+
+		3
+			Abomination is caught
+			If 2 or more unsold: the bucket hums, the log skips a line
+
+		4
+			Heavy Line offered, first purchase possible
+			Player asks where he got it ("Around."), files it under things to ask later
+
+		5
+			Merchant holds his hand over the bucket ("Still warm. Good.")
+
+		6
+			Abomination with a human mouth that breathes in time with you
+
+		7
+			Merchant greets you by name
+			Player cannot explain it, tries anyway
+
+		8
+			Rain: his coat stays dry, his footprints stay wet
+
+		9
+			The thermos: he holds the cup for an hour and never drinks
+			SLIP (accident): he never eats or drinks
+
+		10
+			Small abomination is caught
+			The pouch holds pale warm discs instead of coins
+			Player: you cannot pay rent with shells, he will ask what they are worth
+
+		11
+			Evening begins
+			The water is too low, the dock posts are exposed
+			Bigger abominations available to catch
+
+		12
+			His lantern is lit and nobody lit it
+
+		13
+			Something follows the dock under the surface (player: "a log")
+
+		14
+			Only if the player has refused at least once: "I can wait."
+
+		15
+			Large abomination, still alive, its eye is the same color as his
+			SLIP (accident): "Careful with that one. It is my--" then "fragile"
+
+		16
+			"Come early tomorrow. It is important that you are here at the end."
+			Player's reflection looks damp, he tells himself he will go back because the work is the work
+			DAY 2 ENDS
+
+Day 3  (merchant level 3: impossible, and he stops hiding)
+	FISH CATCH COUNT:
+		0
+			Dock is under an inch of water, it has not rained
+			Merchant stands facing the lake
+			Player tells himself he will only look, and brings the rod anyway
+
+		1
+			Every catch is an abomination from now on
+
+		2
+			Merchant stands on watch
+
+		3
+			He buys without turning, the pouch holds the player's own stopped watch
+
+		4
+			"I am only collecting what is mine."
+			SLIP (on purpose): he does not correct "mine"
+
+		5
+			The player does not see how he takes the fish
+
+		6
+			The log writes a line the player did not trigger ("You were never fishing."), then deletes it
+
+		7
+			The lake goes completely silent
+
+		8
+			"It comes to a fisherman." A second, deeper voice speaks under his
+
+		9
+			Merchant is wet for the first time, the lake is coming out of him
+
+		10
+			Night falls all at once, a pale green light swells under the dock
+			"Come and stand beside me." The player goes, out of curiosity and dread
+
+		11
+			Merchant asks for everything, no pouch this time
+			GIVE or REFUSE prompt
+			If madness reaches 100: THE HANDS take over
+
+		12
+			Final cast ("One more. For me.")
+			THE REVEAL plays (r1 to r6): the lake lifts, the mask, the true form, the voice
+			Hard cut to black mid-word
+			GAME ENDS
+
+
+MERCHANT LADDER (strangeness only ever goes up)
+	Level 1 (Day 1): arrives silently, too warmly dressed, watches the bucket, handles fish gently, warm pouch, long shadow
+	Level 2 (Day 2): already there first, dry in the rain, wet footprints, knows your name, cold hands, never eats or drinks, lantern lights itself, something follows the dock
+	Level 3 (Day 3): second voice, wet, lake silences for him, you never see how he takes the fish, he stops hiding
+	Level 4 (the end): revealed once, then the game stops
+
+
+MERCHANT SLIPS (in the days, plus an extra pool in script section 12)
+	Day 1 (accident): knows the count ("Three."), says "the deep", warns of the edge before you move
+	Day 2 (accident): "my--" then "fragile", names a weight before weighing, hums the bucket's tune, answers an unspoken question
+	Day 3 (on purpose): "mine", "I have been so patient with you", "It spoils them when you are afraid", "You will understand, afterwards"
+
+
+PLAYER'S MOTIVE (cautious, curious, a working fisherman; script section 11)
+	0 to 24: professional, "a buyer is a buyer"
+	25 to 49: cautious and curious, watches the old man and notes where the road is
+	50 to 74: curiosity wins, "I have to know", "fishermen fish"
+	75 to 99: "it is only the job" becomes the last excuse, repeated
+	100: THE HANDS
+
+
+MADNESS BAR (all numbers are placeholders)
+	Catch an abomination: +6
+	Each cast carrying an unsold abomination: +1
+	Refuse to sell: +5
+	Sell an abomination: -8 (bar), +2 (hidden floor, never goes down)
+	Bar reaches 100: THE HANDS (all fish taken, no pay, bar resets to 60, floor +5)
+
+
+LOG VOICE BY MADNESS TIER
+	0 to 24: reliable and plain
+	25 to 49: stutters mid-word, old lines quietly change one word
+	50 to 74: strikes words out and rewrites them, tense and pronouns slip, merchant gets different names
+	75 to 99: edits past lines while you watch, writes unprompted lines, "we" instead of "you"
+	100: THE HANDS
+
+
+LOG EDITS (14 edits across all days, see script section 13)
+	Rule: each edit fires once. If its target line has not been written yet, wait until it has, then fire 2 casts later so the player can watch
+	d1_c13: "boots" becomes "bones" (Edit 1)
+	Madness 25: "It is still breathing" becomes "You are still breathing" (Edit 2)
+	Madness 30: Day 2 line, "A heron, you tell yourself" becomes "A heron, you were told" (Edit 8)
+	Madness 40: "a few paces away" becomes "a few paces closer" (Edit 3)
+	Madness 45: Day 2 line, "a dozen ways he could know" becomes "no ways he could know" (Edit 9)
+	Madness 50: Day 2 line, "A good coat, you think" becomes "A good coat. A good skin." (Edit 10)
+	Madness 55: "looking at your bucket, not at you" is reversed (Edit 4)
+	Madness 60: Day 2 line, "holding it for the warmth" becomes "holding it" (Edit 11)
+	Madness 65: Day 2 line, "A log, you decide" becomes "A back, you decide" (Edit 12)
+	Madness 70: "Good water today." becomes "Good water. Good water. Good water." (Edit 5)
+	Madness 80: Day 3 line, "The lake has stopped pretending" becomes "You have stopped pretending" (Edit 13)
+	Madness 85: "fished here most of your life" becomes "fished here for him your whole life" (Edit 6)
+	Madness 90: Day 3 line, "He is tired of pretending" becomes "You are tired of pretending" (Edit 14)
+	Madness 95: "You do not go home." becomes "You are home." (Edit 7)
+	The reveal (r6): the log restores the original opening line, then cuts
+
+
+SHOP UNLOCKS
+	Day 1: no shop, pay only
+	Day 2 (from d2_c4): Heavy Line (2 pouches), Lantern (3), Lidded Bucket (3)
+	Day 3: nothing new
+
+
+REVEAL FEELING VARIANT (pick one at r5 by the bar at that moment)
+	Bar under 40: "You were right to be careful," the hands will not let go
+	Bar 40 to 79: "You wanted to know. Now you know."
+	Bar 80 or more: "It is only the job," over and over
+

@@ -1,0 +1,163 @@
+=====================================================================
+THE DOCK - FILLER CASTING LINES
+Short lines for casts that are not story beats
+=====================================================================
+
+HOW TO USE
+  - All lines are FAST typewriter (quick and plain). Save the slow
+    typing for the story beats.
+  - Pick one at random from the right pool. Do not repeat the same line
+    twice in a row.
+  - {weight} is the fish's weight in kg, filled from the catch data.
+  - Filler lines never trigger story events. Story beats always win.
+  - Every line is plain second person, present tense, no names, no
+    backstory. Keep it that way when you add your own.
+
+
+---------------------------------------------------------------------
+0. THE ACT OF CASTING (shown right as the player casts, before the result)
+---------------------------------------------------------------------
+- You swing the rod back and let the line fly.
+- A flick of the wrist. The bait arcs out and drops with a soft plink.
+- You cast out toward the grey, as far as the line will go.
+- The reel spins, the line sings, the bait is gone.
+- You cast. The ripples spread and settle.
+- You pick your spot by feel, and cast.
+- Rod back, rod forward, line out.
+- The bait lands where you aimed, more or less.
+- You cast the way you always have, without thinking.
+- You cast into the same patch of water as before. It has not changed. It does not seem to have forgotten you.
+
+
+---------------------------------------------------------------------
+1. NORMAL FISH, SMALL
+---------------------------------------------------------------------
+Released automatically. The merchant does not want them.
+- A bleak, no bigger than your palm. It slips free before you can look at it.
+- A tiny perch, all spines and attitude. Back it goes.
+- A silver minnow flashes in the light. You barely feel it on the line.
+- A little rudd, red-finned and furious. You return it to the water.
+- A stickleback, absurdly proud of itself. You let it have the moment.
+- Something small and quick tugs once and is gone, leaving your bait untouched.
+- A dace, bright as a coin. It is back in the water before you finish blinking.
+- A tiny roach. You hold it a second. It is cold, and ordinary, and alive.
+- A fingerling pike, all teeth and no sense. You free it gently.
+- A glint of scales. Nothing more.
+- A small tench, slick and olive-green. It sulks off into the weed.
+- Just a nibble. You reel in a bare hook and a clean conscience.
+
+
+---------------------------------------------------------------------
+2. NORMAL FISH, BIG
+---------------------------------------------------------------------
+Released automatically.
+- A fat bream, heavy and slow. You lift it with both hands and let it go with a nod.
+- A proper pike, long as your forearm, glaring at you. You thank it for its patience.
+- A carp, gold and enormous, breathing hard on the planks. It looks mildly disappointed in you.
+- A good trout, {weight} kg of pure muscle. A fine, ordinary fish.
+- A big perch, striped like a tiger. It flares its fin at you before you let it go.
+- A tench the color of old coins, thick as a fist. It sinks away slowly, unhurried.
+- A heavy roach, silver and proud. The best fish you have caught all week, and no one to tell.
+- It fights well, a stubborn and honest fight, and then it is simply a good fish in your hands.
+- A chub, wide-mouthed and astonished. You let it go.
+- A fat eel, writhing and glossy. You are glad when it is gone.
+
+
+---------------------------------------------------------------------
+3. ABOMINATION, SMALL (Days 1-2, use after the merchant has appeared)
+---------------------------------------------------------------------
+Mild and deniable. Let the player explain it away.
+- Something pale and wrong. It goes into the bucket without a sound.
+- It is the size of your thumb and it has far too many eyes. They all look at you.
+- A fish with no face, only smooth skin. You do not look at it again.
+- A thing with fins like tiny fingers. It waves, once, and goes still.
+- It weighs almost nothing. It feels like carrying a held breath.
+- Another one. Colder than the last.
+- It twitches in your palm, and then, very slowly, turns to look at the old man.
+- Translucent, wet, nearly human at the edges. You wrap it in your sleeve before you realize you have.
+- It opens its mouth, and for a moment you think you hear it say something.
+- A small pale shape, ribs showing like a drawn bow. It is already warm.
+- It smells of cold iron and something sweeter. The bucket takes it without a splash.
+- Teeth, too many, on a fish no longer than your hand.
+- It hums as you lift it. Barely. You pretend you did not hear.
+- A sliver of white, wriggling and wet. It does not struggle. It is waiting for something.
+
+
+---------------------------------------------------------------------
+4. ABOMINATION, BIG (Days 1-2)
+---------------------------------------------------------------------
+- The rod bends and keeps bending. What comes up is long, pale and heavy, and it does not fight once it clears the water.
+- It is bigger than it should be, and it comes up slowly, as if it were choosing to.
+- A huge slick shape, mottled like a drowned thing. The planks groan under its weight.
+- Something enormous rolls onto the dock and lies there, breathing, with one eye on you.
+- It takes both arms and your whole back. When it lands, the dock shivers.
+- Too long for the bucket. Too wide for the net. It has to be dragged.
+- A great pale body, scarred and patient. It does not thrash. It looks at the sky, and then at you.
+- The line sings, thrums, and then goes still, because whatever is on it has simply decided to come.
+- It is heavier than a fish has any right to be. {weight} kg, and the scale does not seem sure.
+- Skin like wet candle wax. Hands where fins should be. They grip the planks, gently.
+- It surfaces with a sound like a long breath let out.
+- The thing on the hook is nearly the length of the dock. It does not seem to mind being caught.
+- A wide white back breaks the surface, ridged like a ribcage. It does not sink again.
+- It comes up eyes first. You do not look away in time.
+
+
+---------------------------------------------------------------------
+5. ABOMINATION, ANY SIZE (Day 3, when the merchant has stopped hiding)
+---------------------------------------------------------------------
+Every catch is an abomination now. These are more direct and more proprietary.
+- It comes up the moment the line is in the water, as if it had been waiting beside the hook.
+- Another. The lake gives them up like it has been told to.
+- It does not struggle. It has the patience of something that knows where it is going.
+- It looks at him before it looks at you.
+- It is already reaching for the old man when it clears the water.
+- The bucket gets heavier. You do not count anymore.
+- For one moment it has your face, almost. Then it does not.
+- A pale shape, still warm, still breathing. It will be home soon.
+- It hums a tune you have started to know.
+- The water gives it up gently. The water is so very gentle today.
+
+
+---------------------------------------------------------------------
+6. NO CATCH, GENERAL (any day)
+---------------------------------------------------------------------
+- The line goes out, and the water closes over it without a sound.
+- Nothing bites. A gull wheels overhead and loses interest.
+- You wait. The float sits perfectly still, as if it were thinking.
+- The line comes back empty, the bait gone, the hook clean.
+- A ripple, far out, and then nothing at all.
+- You cast again. The same grey water, the same grey sky.
+- The line drifts sideways in a current you cannot feel.
+- Weed on the hook. You pick it off, strand by dripping strand.
+- A fish nudges the bait and loses its nerve. You can feel it thinking it over.
+- Mist lies low on the water. The line vanishes into it.
+- The float dips and bobs and settles. A false alarm.
+- Cold fingers, warm thermos, nothing on the line. A decent morning, whatever else it is.
+- The dock creaks, settling, like something stretching.
+- The line tangles. You work it free with numb fingers and curse quietly.
+- A leaf spins on the surface, and the float follows it, lazily, around and around.
+- The reel ticks softly as it unwinds. It is the loudest thing for a mile.
+
+
+---------------------------------------------------------------------
+7. NO CATCH, WITH THE MERCHANT NEARBY (by day, so he stays on the ladder)
+---------------------------------------------------------------------
+DAY 1 (he watches, that is all)
+- You cast. The old man watches the line, not the water. He seems to know it is empty before you do.
+- Nothing. The old man says nothing either, which somehow feels deliberate.
+- The float sits still. Beside you, the old man sits stiller.
+- You reel in an empty hook. He nods, as if you had done something right.
+
+DAY 2 (he is pleased by nothing)
+- Nothing bites. The old man seems faintly pleased, like it was the answer he expected.
+- You cast, and the whole dock seems to lean in to watch the line.
+- The line goes out, and the old man hums, very softly, until you look at him.
+- Nothing, again. He does not look disappointed. He looks patient. It is worse.
+
+DAY 3 (he has stopped hiding)
+- The line goes out and does not land. It simply stops, and waits.
+- Nothing bites. The lake is holding every fish for him.
+- The line hangs in the air a moment too long before it falls.
+- Nothing. The old man says, gently, "Again."
+- You cast. You do not remember deciding to. Your arm is already moving.
+- No bite. He does not look at the water. He looks at you.

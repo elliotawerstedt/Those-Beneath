@@ -33,6 +33,8 @@ signal narration_done
 ## intro screen to the main game UI.
 signal intro_finished
 
+signal intro_tween_finished
+
 ## Optional generic signal for numeric stats changing (rod skill, money,
 ## number of fish caught today, etc). Handy to have from the start even
 ## if you don't use it yet.

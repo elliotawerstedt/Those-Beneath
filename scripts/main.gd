@@ -15,6 +15,8 @@ extends Node
 
 @onready var intro_screen: Control = $IntroScreen
 @onready var game_screen: Control = $GameScreen
+@onready var fishing_button: Button = $GameScreen/FishingButton
+
 
 
 func _ready() -> void:
@@ -22,6 +24,7 @@ func _ready() -> void:
 	intro_screen.visible = true
 
 	Events.intro_finished.connect(_on_intro_finished)
+	Events.intro_tween_finished.connect(_on_intro_tween_finished)
 
 
 func _on_intro_finished() -> void:
@@ -35,6 +38,26 @@ func _on_intro_finished() -> void:
 	#Fade in the game
 	var fade_in := get_tree().create_tween()
 	fade_in.tween_property(game_screen, "modulate:a", 1.0, 2)
+	
+	await fade_in.finished
+	Events.intro_tween_finished.emit()
+	
+	
+	#One time run directly after intro screen has faded in completely
+func _on_intro_tween_finished():
+	Events.story_event_triggered.emit("intro_line")#The intro line in the story log
+	
+	#Make the fishing button fade in 
+	var button_fade_in = get_tree().create_tween()
+	button_fade_in.tween_property(fishing_button, "modulate:a", 1.0, 7)
+
+
+
+
+
+
+
+
 
 
 	# This is a good place to kick off anything that should only start

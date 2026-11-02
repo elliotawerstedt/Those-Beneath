@@ -39,11 +39,29 @@ extends ScrollContainer
 ## Tune this in the Inspector until it feels right -- try 0.01-0.05.
 @export var typing_speed: float = 0.01
 
+var italics_font = FontVariation
+var bold_font = FontVariation
+var bold_italics_font = FontVariation
 
 
 func _ready() -> void:
 	Events.print_text.connect(add_line)
+	
+	#Create an italics font version
+	italics_font = FontVariation.new()
+	italics_font.base_font = story_font
+	italics_font.variation_transform = Transform2D(Vector2(1, 0), Vector2(-0.3, 1), Vector2.ZERO)
 
+	#Create a bold font version
+	bold_font = FontVariation.new()
+	bold_font.base_font = story_font
+	bold_font.variation_embolden = 0.4
+
+	#Create a bold italics font version
+	bold_italics_font = FontVariation.new()
+	bold_italics_font.base_font = story_font
+	bold_italics_font.variation_embolden = 0.4
+	bold_italics_font.variation_transform = Transform2D(Vector2(1, 0), Vector2(-0.3, 1), Vector2.ZERO)
 
 ## Appends one new line of text to the bottom of the log, typed out
 ## character by character, and keeps the view scrolled to follow it.
@@ -66,8 +84,15 @@ func add_line(text: String) -> void:
 		# "bold_font", "italic_font", "bold_italic_font", and "mono_font"
 		# if you use those BBCode tags later and want them styled too.
 		line.add_theme_font_override("normal_font", story_font)
+		line.add_theme_font_override("italics_font", italics_font)
+		line.add_theme_font_override("bold_font", bold_font)
+		line.add_theme_font_override("bold_italics_font", bold_italics_font)
 
 	line.add_theme_font_size_override("normal_font_size", story_font_size)
+	line.add_theme_font_size_override("italics_font_size", story_font_size - 5)
+	line.add_theme_font_size_override("bold_font_size", story_font_size)
+	line.add_theme_font_size_override("bold_italics_font_size", story_font_size)
+
 
 	log_container.add_child(line)
 

@@ -1,0 +1,1172 @@
+=====================================================================
+THE DOCK - STORY SCRIPT (v6: the fisherman and the merchant)
+Editable master text for all narration, dialogue and thoughts
+=====================================================================
+
+
+---------------------------------------------------------------------
+WHAT CHANGED FROM v5
+---------------------------------------------------------------------
+
+Only the player's motive. The player is no longer being drawn in or made
+fond of the merchant. He is a working fisherman who is cautious, curious,
+and keeps fishing because it is his job.
+
+  - Day 1 now establishes the job (the rent is due, "a fisherman who does
+    not fish is only a man standing near water").
+  - The player probes and files things away ("things to ask later"), and
+    the merchant answers evasively.
+  - As madness rises, "it is only the job" goes from a sensible reason to
+    the last excuse he has left (section 11).
+  - Days 2 and 3 no longer have the player drifting to the dock or walking
+    without feeling his feet. He goes because he has to know.
+  - The reveal's last thought changes with madness: careful, curious, or
+	clinging to "it is only the job".
+  - A few slips and unprompted lines lost their "proud / happy / good" wording.
+  - Log edits now also rewrite Day 2 and Day 3 lines (edits 8 to 14), so the
+	log keeps going wrong in what the player is reading (section 13).
+
+---------------------------------------------------------------------
+HOW TO READ THIS FILE
+---------------------------------------------------------------------
+
+Every block starts with an EVENT ID, like d2_c8 (Day 2, catch count 8).
+Use these IDs as the keys in your code.
+
+TAGS
+  [LOG]       Text the story log writes by itself. Second person, present tense.
+  [THOUGHT]   The player's inner voice. Suggested: wrap in [i]...[/i] in the log.
+  [MERCHANT]  Spoken dialogue. Suggested: a distinct color or leading dash.
+  [SYSTEM]    Not shown as text. Something in the UI or game state changes.
+              "SLIP (accident)" or "SLIP (on purpose)" marks a merchant slip.
+  [TYPING]    SLOW = full typewriter treatment, FAST = quick plain line.
+
+PLACEHOLDERS (fill these in from game state)
+  {species}       species of the first abomination caught
+  {heaviest}      weight of the heaviest fish caught so far
+  {count}         total fish caught so far
+  {pouches}       pouches the player currently holds
+  {sold}          number of abominations sold so far
+  [Player Name]   the player's name. If the player has none, cut those lines.
+
+DESIGN REMINDERS
+  - Pouches are flat pay: 1 per abomination, 2 per large one. Never changes.
+  - Madness bar: catch +6, carry unsold +1 per cast, refuse +5, sell -8.
+  - Hidden floor: every sale +2, never decreases. Bar cannot drop below it.
+  - At 100 the bar triggers THE HANDS (see section 10).
+  - All numbers are placeholders. Tune in playtesting.
+
+
+---------------------------------------------------------------------
+THE THREE RULES FOR THE MERCHANT
+---------------------------------------------------------------------
+
+1. THE LADDER. His strangeness only ever goes UP. Never remove a tell.
+
+   LEVEL 1  (Day 1)  Odd, but the player has an answer for everything
+			Arrives without a sound. Dressed too warmly. Watches the bucket,
+			not you. Handles fish gently. Smiles slowly. Warm pouch.
+
+   LEVEL 2  (Day 2)  Odd, and the answers are getting thin
+			Already there before you. Dry in the rain. Footprints that stay
+			wet. Knows your name. Cold hands. Never eats or drinks. A lantern
+			lit by no one. Something follows the dock.
+
+   LEVEL 3  (Day 3)  Impossible, and the player stops explaining
+			A second voice under his. Water coming out of him. The lake goes
+			silent for him. You never see how he takes the fish. He stops
+			hiding.
+
+   LEVEL 4  (the end)  Revealed, once. Then the game stops.
+
+2. THE EXPLANATIONS. On Days 1 and 2, every oddity gets an ordinary
+   explanation, and the player reaches for it a little too quickly. On Day 3
+   the explanations run out and the player simply knows what he saw.
+
+3. THE SLIPS. Most of the time he keeps his cool. Now and then a word, a
+   pause or a habit gives him away. Early on it is by accident. Later it is
+   on purpose, because he has stopped bothering. Tag every slip.
+
+THE PLAYER'S MOTIVE (the other half of the horror)
+   The player is cautious, curious, and a working man. He does not want to
+   please the merchant. He keeps fishing because it is his job, because a
+   buyer is a buyer, and because he has to know what the old man wants. As
+   madness rises, "it is only the job" stops being a reason and becomes the
+   last excuse he has left. By the end it is all he can say.
+
+=====================================================================
+1. ORDINARY AND FILLER CATCHES (FAST, pick one at random)
+=====================================================================
+
+Normal fish are released automatically. The merchant does not want them.
+
+[TYPING: FAST]
+- A perch, small and indignant. You return it to the water.
+- A roach. It flops once and is gone.
+- A trout. Good weight, good color. You let it go. You are not sure why.
+- Nothing on the hook but weed. You shake it loose.
+- A bream. It looks at you, offended, then sinks.
+- The line comes back empty. The bait is gone.
+- A pike, half asleep. It lets you unhook it without a fight.
+- A small eel. You drop it quickly. It looks like a question.
+
+---------------------------------------------------------------------
+ABOMINATION FILLER (FAST, use on counts that have no story beat)
+---------------------------------------------------------------------
+
+[TYPING: FAST]
+- Something pale and wrong. It goes in the bucket without a sound.
+- A fish with no face, only smooth skin. You do not look at it again.
+- Teeth, too many, on a fish no longer than your hand. The bucket takes it.
+- A thing with fins like fingers. It waves, once, and is still.
+- It weighs almost nothing. It feels like carrying a held breath.
+- Another. Colder than the last.
+- It stares up at you from the bucket. You put the lid on.
+- A fish, nearly. It hums as you lift it.
+- It looks at the old man before it looks at you.
+
+=====================================================================
+2. DAY 1 - THE OFFER (merchant level 1: the player explains everything)
+=====================================================================
+---------------------------------------------------------------------
+d1_c0   [Fishing button is shown]
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The dock creaks beneath your boots.
+[LOG] Grey water stretches out to a greyer horizon. You have fished here most of your life.
+[LOG] Your thermos is warm. Your bucket is empty. The rent is due on the first.
+[THOUGHT] Same spot, same hour. Some things you can count on.
+[THOUGHT] A fisherman who does not fish is only a man standing near water.
+[SYSTEM] Fishing button appears.
+
+---------------------------------------------------------------------
+d1_c1   A normal start
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] A small perch on the very first cast. You turn it over in your hand, grey-green and striped and perfectly ordinary, and drop it back.
+[LOG] The thermos is still warm. A good start.
+[THOUGHT] Slow morning. Just how you like them.
+
+---------------------------------------------------------------------
+d1_c2   (filler)
+---------------------------------------------------------------------
+
+---------------------------------------------------------------------
+d1_c3   First abomination
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The line goes heavy, then strangely light.
+[LOG] What comes up is a fish, mostly. Pale as candle wax, ribs showing through its skin like the hull of a boat. Too many teeth, and they are in the wrong places.
+[LOG] It is still breathing. Slowly, as if it is thinking about it.
+[THOUGHT] A deformity. Pollution, maybe. You have read about this.
+[LOG] You put it in the bucket. You are not sure why you did not throw it back.
+
+---------------------------------------------------------------------
+d1_c4   The bucket
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The abomination lies in the bucket, and you keep glancing at it. It has not moved, but you have the impression that it is watching the lid.
+[LOG] The next catch is a perfectly normal roach. You are absurdly pleased by it.
+[THOUGHT] See? Normal. It was a fluke.
+
+---------------------------------------------------------------------
+d1_c5   Cold water in the bucket
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] You check the bucket. The fish inside is exactly where you left it, but the water around it has gone cloudy and cold, though the day is warm.
+[LOG] You tell yourself it is the shade. You do not move the bucket into the sun.
+[THOUGHT] Do not look at it for a while.
+
+---------------------------------------------------------------------
+d1_c6   Second abomination. The merchant is introduced.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] Another. Different from the first, and wrong in a different way: a single eye, wide and glassy, set in the side of its throat.
+[THOUGHT] Two is not a coincidence. Two is a pattern. You don't like patterns.
+[LOG] A board creaks behind you.
+[LOG] You did not hear anyone walk down the dock. An old man stands a few paces away, hands folded over the head of a cane, dressed too warmly for the weather. He is looking at your bucket, not at you.
+[MERCHANT] "Good water today."
+[LOG] You agree that it is. He nods slowly, as if you had told him something important, and says nothing more.
+[THOUGHT] Where did he come from? There is only the one road.
+[THOUGHT] He must have been standing back by the boathouse. You were not looking.
+
+---------------------------------------------------------------------
+d1_c7   Third abomination. The madness bar is introduced.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The third comes up easily, almost willingly. It is the size of your hand, its scales the color of old bruises.
+[LOG] Something moves behind your eyes, like a fish turning in deep water. Then it is gone.
+[LOG] Behind you, the old man says quietly, "Three."
+[LOG] You did not count aloud. Perhaps you did. You must have.
+[LOG] A thin line appears at the edge of your thoughts, and you know, without being told, what it measures.
+[THOUGHT] Three. Why does it feel like I am being counted?
+[SYSTEM] Madness bar is revealed.
+[SYSTEM] SLIP (accident): he knows the count before it is said.
+
+---------------------------------------------------------------------
+d1_c8   The quiet before the offer
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The gulls have gone quiet. You do not notice at first, only that the morning feels stuffed with wool.
+[LOG] Beside you, the old man shifts his weight from one foot to the other. It is the first time he has moved in an hour.
+[THOUGHT] He is waiting for something. He is very good at it.
+
+---------------------------------------------------------------------
+d1_c9   The merchant offers to buy. Sell button and pouches appear.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The old man has been standing there a long while. When you reach for the bucket, he finally speaks.
+[MERCHANT] "Selling today?"
+[LOG] You tell him they are not for sale. They are not even fit to eat.
+[MERCHANT] "No. They are not."
+[LOG] He smiles. It takes some time.
+[MERCHANT] "I will take all of them. Whatever you have caught, whatever you catch. I pay well, and I pay in what is useful."
+[LOG] He holds out a small pouch of cracked leather. It is heavier than it looks.
+[THOUGHT] Someone wants these. Someone will pay. Why?
+[THOUGHT] It is only money. Does it matter?
+[THOUGHT] A buyer is a buyer. That is the whole of the trade.
+[SYSTEM] Sell button appears. Pouches appear in the UI.
+
+---------------------------------------------------------------------
+d1_c10   His interest sharpens
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The old man has moved closer without you noticing. His eyes follow every cast.
+[LOG] When your line breaks the surface he tilts his head, slightly, like a man listening for a sound in another room.
+[MERCHANT] "Another soon, I think."
+[THOUGHT] He says it like a forecast. Like weather he is fond of.
+
+---------------------------------------------------------------------
+d1_c11   Evening begins. Bigger abominations available.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The light goes orange, then red, then something without a name. The water darkens early.
+[LOG] The old man's shadow on the planks is longer than he is. It is the low sun, you tell yourself. The low sun does that.
+[LOG] Under your boots the boards hum faintly, the way a dock does when a boat passes. There is no boat.
+[THOUGHT] Time to go home.
+[THOUGHT] But the fish are biting, and a day's work is a day's work.
+[LOG] You do not go home.
+[SYSTEM] Large abominations now possible.
+
+---------------------------------------------------------------------
+d1_c12   The water seems higher
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The water looks higher than it did this morning. You tell yourself it is the tide.
+[LOG] You are standing a little further from the edge than you were.
+[THOUGHT] There are no tides in a lake. You know that.
+[LOG] The old man says nothing. He stands very still, the way a heron does.
+
+---------------------------------------------------------------------
+d1_c13   Small abomination. The merchant takes it and turns away.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] It is small. Barely a mouthful. It has no eyes at all, only smooth skin where they should be.
+[LOG] You do not get to reach for the bucket. Quick as a heron, the old man's hand closes around the fish, and he turns his back to you.
+[LOG] You hear something. Small, wet, patient sounds. You decide not to guess what they are.
+[LOG] When he turns again he is dabbing at his mouth with a handkerchief. He presses a pouch into your hand. It is warm, as if it had been held a long time.
+[MERCHANT] "Forgive me. It has been a long time."
+[THOUGHT] Do not open the pouch. You do not want to know.
+[SYSTEM] LOG EDIT 1 fires here (see section 13).
+
+---------------------------------------------------------------------
+d1_c14   Large abomination. The merchant looms. End of Day 1.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The rod bends double. It takes everything you have, and when it clears the water you almost let go.
+[LOG] It is longer than your arm. Its skin is slick and mottled like a drowned thing, and when the mouth opens there is no end to it.
+[LOG] A shadow falls across your shoulder. You did not hear him come.
+[LOG] You can smell him: lake water and old stone and something sweet, like fruit left too long.
+[MERCHANT] (low, close to your ear) "Beautiful."
+[THOUGHT] Do not turn around.
+[LOG] You set the fish down on the planks. You do not look at him. You walk, without running, to the end of the dock and up the road, and you do not stop until your door is shut and locked.
+[LOG] You sleep badly. In the dark you catch yourself counting casts, as though you were being paid by the one.
+[SYSTEM] Day 1 ends. Fade to Day 2.
+
+
+=====================================================================
+3. DAY 2 - THE SHOP (merchant level 2: the answers get thin)
+=====================================================================
+---------------------------------------------------------------------
+d2_c0   Fog. The fish is gone. The shop opens.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] You told yourself you would take the day off. Then you thought of the rent, and the bait, and you were on the dock before sunrise.
+[LOG] Fog. You can barely see the water, but you can hear it, lapping close.
+[LOG] The fish you left on the dock is gone. A wet drag-mark runs across the planks and over the edge. A heron, you tell yourself. A fox. Neither would leave a mark that long.
+[LOG] The old man is already seated at the end of the dock. His coat is dry. Everything else is damp.
+[LOG] He has spread a cloth beside him and laid out a few things on it: a coil of line, a lantern, a bucket with a lid.
+[MERCHANT] "Good morning. I was hoping you would come."
+[THOUGHT] Hoping. He did not say expecting.
+[SYSTEM] Shop opens.
+
+---------------------------------------------------------------------
+d2_c1   A normal catch, and relief
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] A perch. Plain and ordinary. You nearly laugh with relief.
+[LOG] The old man does not look at it.
+[MERCHANT] "Not those."
+[THOUGHT] He says it like a man declining a gift he has been given many times.
+
+---------------------------------------------------------------------
+d2_c2   Everything bites the way it should
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] A roach. A second roach. A tench the color of old coins. Everything bites the way it should, and you find yourself waiting for the wrong one.
+[THOUGHT] Why am I waiting for the wrong one?
+
+---------------------------------------------------------------------
+d2_c3   Abomination. Hum trigger if 2 or more unsold.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The water gives it up as though it was waiting by the hook.
+[LOG] Grey, pebbled skin. Fins like torn sails. It looks at you with something very close to recognition.
+[THOUGHT] It knows me. That is ridiculous.
+IF unsold >= 2:
+[LOG] The bucket begins to hum. A low sound, almost a tune. The fish inside shift when you look away.
+[THOUGHT] Count them again. Count them again.
+[SYSTEM] Log skips one line (a missing line is intentional).
+
+---------------------------------------------------------------------
+d2_c4   Heavier line. First purchase.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The old man taps the coil of line with his cane.
+[MERCHANT] "The deeper ones will not rise to a thin line. This will hold."
+[LOG] He names a price: two pouches. It does not sound like a price. It sounds like a courtesy.
+[THOUGHT] The deeper ones. He says it like he knows them.
+[LOG] You ask where he got it.
+[MERCHANT] "Around."
+[LOG] It is the kind of answer that closes a door politely.
+[THOUGHT] You file it under things to ask later. You are good at filing. It is most of the job.
+[SYSTEM] Heavy Line available (2 pouches).
+
+---------------------------------------------------------------------
+d2_c5   He checks the bucket
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The old man crouches beside your bucket without being asked. He does not touch the fish. He holds his hand above them, palm down, the way you would warm your hands at a stove.
+[MERCHANT] "Still warm. Good."
+[LOG] He stands, his knees silent, and returns to his seat.
+[THOUGHT] They are dead. They should not be warm.
+
+---------------------------------------------------------------------
+d2_c6   Abomination with a human mouth
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The mouth is wrong the moment you see it. Soft, lipped, almost human. It opens and closes, opens and closes.
+[LOG] It takes you a long moment to understand that it is breathing in time with you.
+[THOUGHT] Hold your breath. See what it does.
+[LOG] You do not hold your breath.
+
+---------------------------------------------------------------------
+d2_c7   He greets you by name
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] He watches you cast. Then, mildly, as though continuing a long conversation:
+[MERCHANT] "You are tired, [Player Name]."
+[LOG] You do not recall telling him your name.
+[THOUGHT] A lucky guess. Something you said in passing. There are a dozen ways he could know.
+[THOUGHT] You do not believe any of them.
+
+---------------------------------------------------------------------
+d2_c8   Rain, and a dry coat
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] Rain begins, thin and cold. You pull your hood up and hunch over the rod.
+[LOG] When you glance at the old man, his coat is perfectly dry. A good coat, you think. A wide-brimmed hat.
+[LOG] He is not wearing a hat.
+[LOG] You look at the boards. His footprints are dark against the wet planks, and they do not fade, even as the rain falls into them.
+[THOUGHT] Do not stare. He will notice you staring.
+[MERCHANT] "It is only weather."
+
+---------------------------------------------------------------------
+d2_c9   The thermos
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] You offer him your thermos. It seems rude not to.
+[LOG] He accepts the cup with both hands and thanks you as though no one had offered him anything in years. He holds it for an hour, steam rising, and does not drink.
+[LOG] When you take it back it is exactly as full as when you handed it over. It is still hot.
+[THOUGHT] He was only holding it for the warmth. That is all.
+[THOUGHT] His hands are cold. You do not say so. You do not ask why he never lets go of the cup.
+[SYSTEM] SLIP (accident): he never eats or drinks.
+
+---------------------------------------------------------------------
+d2_c10   Small abomination. The pale discs.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] A small thing, quick and slippery, with a jaw that unfolds like a fan.
+[LOG] You sell it. The pouch is warm. You open it, because you finally have to.
+[LOG] Inside, instead of coins, are pale smooth discs, each curved like the inside of a shell, each faintly warm as if just held in a hand.
+[THOUGHT] Shells. They are shells. Some kind of old currency.
+[THOUGHT] You cannot pay rent with shells. You will ask what they are worth. Tomorrow, when you are braver.
+[LOG] You close the pouch. You could swear, as it closed, that one of them pulsed once against your thumb.
+
+---------------------------------------------------------------------
+d2_c11   Evening. The water is too low.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The water is low tonight, lower than you have ever seen it. The posts of the dock stand bare, crusted with shapes you do not look at for long.
+[LOG] A dry spell, you tell yourself. It has been a dry year.
+[THOUGHT] It rained today.
+[SYSTEM] Large abominations now possible.
+
+---------------------------------------------------------------------
+d2_c12   Evenings are longer here
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The lantern on his cloth is lit. You did not see anyone light it. The flame burns the color of the inside of a shell and gives no warmth.
+[MERCHANT] "Evenings are longer here than they used to be."
+[THOUGHT] Longer than what?
+
+---------------------------------------------------------------------
+d2_c13   Something follows the dock
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] Something long and dark keeps pace with the dock, just under the surface. It does not break the water. It only pushes it, in a slow, patient wake.
+[LOG] A log, you decide. A drifting log.
+[LOG] Logs do not keep pace.
+[THOUGHT] It stays near the old man's end of the boards.
+
+---------------------------------------------------------------------
+d2_c14   Conditional: only if the player has refused at least once
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[MERCHANT] "I can wait."
+[LOG] He says it quietly, and does not say anything else. His smile has stayed on his face a moment too long.
+(If the player has NOT refused yet, skip this beat or use a FAST filler.)
+
+---------------------------------------------------------------------
+d2_c15   Large abomination, still alive. "My--"
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] It is enormous and it is still alive. It thrashes on the planks, slow and heavy, and one eye rolls toward you.
+[LOG] The eye is the same pale color as the old man's.
+[THOUGHT] No. Not the same. Just a trick of the fog.
+[LOG] He buys it without haggling. When he lifts it, his hands tremble, just once, a thing a more careful man would have hidden.
+[MERCHANT] "Careful with that one. It is my--"
+[LOG] He stops, and clears his throat, a dry sound like a door.
+[MERCHANT] "Fragile. It is fragile."
+[THOUGHT] He said "my". I heard him say it.
+[THOUGHT] You must have misheard. You must have misheard.
+[SYSTEM] SLIP (accident): "my", then a correction.
+
+---------------------------------------------------------------------
+d2_c16   Come early tomorrow. End of Day 2.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The old man stands. His knees do not crack, the way an old man's should.
+[MERCHANT] "Come early tomorrow. It is important that you are here at the end."
+[LOG] You walk home. In the window of your kitchen your reflection looks damp around the edges. Condensation, you tell yourself.
+[LOG] You tell yourself you will go back because the work is the work. You tell yourself you are not curious what "the end" means.
+[THOUGHT] Do not look at it for long.
+[SYSTEM] Day 2 ends. Fade to Day 3.
+
+
+=====================================================================
+4. DAY 3 - THE END OF THE DOCK (merchant level 3: no more explaining)
+=====================================================================
+---------------------------------------------------------------------
+d3_c0   The dock under shallow water
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The dock is under an inch of water. It has not rained.
+[LOG] No birds. No wind. The road behind you is empty in both directions.
+[LOG] The old man stands at the very end, facing the lake. He does not turn.
+[MERCHANT] "You came early. Good."
+[THOUGHT] You told yourself you would only look.
+[THOUGHT] You brought the rod anyway. A fisherman brings the rod.
+
+---------------------------------------------------------------------
+d3_c1   Every catch is an abomination now
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The first cast is an abomination. So is the second. So is every cast, from now on.
+[LOG] The lake has stopped pretending. It gives you only one kind of fish.
+[THOUGHT] When did I stop being surprised?
+
+---------------------------------------------------------------------
+d3_c2   On watch
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The old man has stopped sitting. He stands at the very end of the dock now, cane planted, facing the lake, and does not turn when you cast.
+[LOG] The water under the boards slaps slow and heavy, like something being patted.
+[THOUGHT] He is not resting anymore. He is on watch.
+
+---------------------------------------------------------------------
+d3_c3   He buys without turning. Your watch.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] He takes the fish without turning around. You hand it over and he does not look at it, or you.
+[LOG] The pouch is heavy. Inside, among the pale discs, is a wristwatch. Yours. The hands have stopped at 6:12, the minute you first saw him.
+[LOG] You check your wrist. It is bare. You do not remember taking it off.
+[THOUGHT] When did he take it? He has not been near me.
+[THOUGHT] He has not been near me.
+
+---------------------------------------------------------------------
+d3_c4   "Mine." (he does not correct it this time)
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[MERCHANT] "Do you know why they come to you?"
+[LOG] He means the fish. He says it without turning.
+[THOUGHT] You have been wondering that for three days. It is no comfort to hear him wonder it too.
+[MERCHANT] "They are not lost. They were never lost. They are only slow, and the water is very, very large."
+[LOG] A long pause. The line thrums softly in the water.
+[MERCHANT] "I am only collecting what is mine."
+[THOUGHT] Mine. He said mine.
+[THOUGHT] He did not correct it.
+[SYSTEM] SLIP (on purpose): he has stopped hiding.
+
+---------------------------------------------------------------------
+d3_c5   You do not see how he takes it
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] This time he turns to face you. He takes the next fish from your hands, and you do not see what he does with it. One moment it is there. The next his hand is empty and his mouth is closed, and the pouch he gives you is warm.
+[MERCHANT] "Forgive the manners. It has been such a long wait."
+[THOUGHT] Do not look away. If you look away, he will know you saw.
+
+---------------------------------------------------------------------
+d3_c6   The log writes a line you did not trigger
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] You were never fishing.
+(Hold for two seconds, then delete the line from the log as if it had never been written. Resume with a plain line:)
+[LOG] The line goes into the water. The line comes back out. It is only a morning.
+[THOUGHT] That was not me. That was not me.
+
+---------------------------------------------------------------------
+d3_c7   The lake holds still
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The birds are gone. The insects are gone. Even the wind has stopped, as if it were waiting for permission.
+[LOG] Your own breathing is very loud. So is the line, thrumming softly in the water.
+[THOUGHT] The whole lake is holding still for him.
+
+---------------------------------------------------------------------
+d3_c8   "It comes to a fisherman." Two voices.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[MERCHANT] "One more. One more, and I will have what I came for."
+[LOG] For a moment there are two voices: his, and another, half a second behind and far, far deeper, as though the lake were repeating him.
+[MERCHANT] "It will not come to a line. It will not come to a hook. It comes to a fisherman."
+[LOG] He finally turns. His face is the same as it has been, old and mild and tired. The water at his feet is perfectly flat.
+[THOUGHT] You are not looking at his face. You are looking at his eyes, and they are very, very old.
+
+---------------------------------------------------------------------
+d3_c9   He is wet
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] It starts at the hem of his coat: a dark line creeping upward, and then drops running from his sleeves and from the tip of his cane.
+[LOG] For the first time, he is wet. The dry coat that has followed him since the rain is gone. Nothing has fallen from the sky. It is simply the lake, coming out of him.
+[MERCHANT] "Pardon me. I am not as careful as I used to be."
+[THOUGHT] He is tired of pretending.
+[THOUGHT] And you are tired of pretending you have not noticed.
+
+---------------------------------------------------------------------
+d3_c10   Night falls all at once. "Come and stand beside me."
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The sun does not set. It is simply taken, all at once, like a lid closing.
+[LOG] Under the dock, deep in the water, a pale green light begins to swell, slow and even, like a breath.
+[LOG] The old man holds out one hand without looking at you.
+[MERCHANT] "Come and stand beside me."
+[THOUGHT] Do not go.
+[THOUGHT] You want to see what he does next. That is the part you will hate yourself for.
+[LOG] You go. You have come this far, and you have to know.
+[SYSTEM] SLIP (on purpose): he asks, and the player's curiosity does the rest.
+
+---------------------------------------------------------------------
+d3_c11   He asks for everything
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] Your bucket is silent now. Even the hum has stopped.
+[MERCHANT] "Everything you have caught. All of it. There will be no pouch this time."
+[LOG] There is nothing in his voice but patience. It is the patience of a tide.
+[THOUGHT] If I refuse, he waits. If I give it, he takes. He never needed to ask.
+[THOUGHT] He is asking because asking is more polite than taking.
+[SYSTEM] Prompt: GIVE or REFUSE.
+(If REFUSE: see section 7, then continue at +10 madness.)
+(If madness >= 100 here, THE HANDS fire automatically. Section 10.)
+
+---------------------------------------------------------------------
+d3_c12   The final cast. Leads into the Reveal.
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] He stands beside you at the end of the dock and nods at the water.
+[MERCHANT] "One more. For me."
+[LOG] You cast. The line does not sink. It lies on the surface, and then, slowly, begins to move toward the green light, and you feel something far below take hold.
+[LOG] The reel clicks. The rod bends. Something is pulling, and it is not a fish.
+[LOG] You try to let go. Your hands are already closed. It is only the job, you think, absurdly. It is only the job.
+[THOUGHT] It was never the fish.
+[THOUGHT] It was always you.
+[SYSTEM] Go straight to section 5, THE REVEAL.
+
+=====================================================================
+5. THE REVEAL (merchant level 4, then the game stops)
+=====================================================================
+---------------------------------------------------------------------
+This is the ONLY place the merchant is shown for what he is. Keep it short
+and fast. It plays straight after d3_c12. No choices, no selling, no UI.
+After the last line the game cuts to black. It does not end gently.
+---------------------------------------------------------------------
+
+---------------------------------------------------------------------
+r1   The water lifts
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] The line does not run. It rises.
+[LOG] The whole surface of the lake lifts around the end of the dock, slow and smooth, like a held breath, and the dock lifts with it.
+[LOG] The old man stands beside you, perfectly calm, hands folded over his cane. The water that should be soaking him slides off his coat like glass.
+[MERCHANT] "Do not let go. It will not hurt, if you do not let go."
+
+---------------------------------------------------------------------
+r2   The mask
+---------------------------------------------------------------------
+[TYPING: SLOW]
+[LOG] He turns to face you, and you understand that he has been standing in exactly the same position all this time. Not once, in three days, have you seen him blink.
+[LOG] His smile does not widen. It simply goes on, past the edges of his face, past where a face has edges.
+[LOG] The old man is not an old man. He is not wearing a disguise. You were only ever looking at the part of him that fit.
+
+---------------------------------------------------------------------
+r3   The true form (typing speed: starts SLOW, accelerates)
+---------------------------------------------------------------------
+[TYPING: SLOW, then faster with every line]
+[LOG] Below the dock, the green light opens.
+[LOG] It is an eye. It is the size of a house, and it is only the first, and it is not looking at you the way an animal looks. It is looking at you the way you look at a coin in your hand.
+[LOG] The lake is not rising out of itself. The lake is what it was wearing. It comes up around you in coils and folds and arms as wide as roads, a body with no outline, a geometry with too many corners, blotting out the stars one by one, as though someone were closing a great book.
+[LOG] Everything you caught is in it. Every pale, wrong, staring thing you sold him drifts up through the dark, home, and fits.
+
+---------------------------------------------------------------------
+r4   The voice
+---------------------------------------------------------------------
+[TYPING: FAST]
+[LOG] It speaks, and the words arrive without sound, in your teeth, in the tide of your blood.
+[MERCHANT] "You did your work so well. You were so patient."
+[MERCHANT] "They would not come to me. I am too old, and too large, and they are too frightened. They came to you."
+[MERCHANT] "Thank you for bringing my children home, little fisherman. Now I may wake."
+
+---------------------------------------------------------------------
+r5   How the player feels (pick ONE by the madness bar at this moment)
+---------------------------------------------------------------------
+[TYPING: FAST]
+LOW (bar under 40):
+[THOUGHT] You were right to be careful. You should have been more careful. Your hands will not let go of the rod.
+
+MID (bar 40 to 79):
+[THOUGHT] You wanted to know. Now you know. It is the last thing you will ever learn, and you are still holding the rod.
+
+HIGH (bar 80 or more):
+[THOUGHT] It is only the job. It is only the job. It is only the job.
+
+---------------------------------------------------------------------
+r6   The cut (the last thing the player ever sees)
+---------------------------------------------------------------------
+[TYPING: FAST, faster, then nothing]
+[LOG] The lake closes over the dock like a hand, and the last light is a pale green coin very far above.
+[LOG] The dock creaks beneath your boots.
+[LOG] The water knows who you w
+[SYSTEM] Hard cut to black MID-WORD. No fade. No title card. No credits for 5 seconds.
+[SYSTEM] Then return to the title screen. (The log's last whole sentence is the restored
+         opening line from EDIT 1, "The dock creaks beneath your boots.")
+
+
+=====================================================================
+6. SELLING DIALOGUE (by day, so the merchant stays on the ladder)
+=====================================================================
+---------------------------------------------------------------------
+Use the pool for the current day, in order. Each sale is polite on the
+surface. The menace is in what is slightly too intimate or too proprietary.
+---------------------------------------------------------------------
+
+[TYPING: FAST for log, SLOW for merchant]
+
+DAY 1 (level 1: courteous, a little too interested)
+Sale 1
+[LOG] He takes the fish in both hands, gently, as though it might break.
+[MERCHANT] "Thank you. That is a kindness."
+Sale 2
+[LOG] He weighs it in one hand and nods.
+[MERCHANT] "Fresh. Always freshest from the deep."
+Sale 3
+[LOG] His fingers brush yours. They are cold, as if he had been holding a glass of water.
+[MERCHANT] "You have a good eye for these."
+
+DAY 2 (level 2: too familiar)
+Sale 1
+[LOG] He accepts the fish without weighing it, as though weight was never the point.
+[MERCHANT] "Another. You are very reliable, [Player Name]."
+Sale 2
+[LOG] He closes his eyes a moment as he holds it, the way people do over a cup of something hot.
+[MERCHANT] "There. That one was far from home."
+Sale 3
+[LOG] The fish goes quiet in his hands, the way a child does when it is picked up.
+[MERCHANT] "They do not like to be handled by strangers. They like you."
+Sale 4
+[LOG] You do not remember handing it over. It is simply in his hands.
+[MERCHANT] "You do not ask what I do with them. That is wise."
+
+DAY 3 (level 3: he has stopped hiding)
+Sale 1
+[LOG] He takes it without looking. For a moment his voice has a second voice beneath it.
+[MERCHANT] "Thank you."
+Sale 2
+[LOG] He holds the fish to the light, as if checking it for a flaw.
+[MERCHANT] "They remember you, you know. Every one of them."
+Sale 3
+[LOG] The old man's mouth moves. You do not hear the words. You feel them in your teeth.
+[MERCHANT] "Almost. Almost."
+Sale 4
+[LOG] You hold the fish out. He does not take it. It slides from your fingers into his, as if drawn by a current.
+[MERCHANT] "We are very close now, [Player Name]. Very close."
+Sale 5 and beyond
+[LOG] The sale happens without your noticing. You blink, and the bucket is lighter.
+[MERCHANT] "Thank you."
+
+AFTER ANY SALE (relief, bar drops):
+[TYPING: SLOW]
+- The weight lifts off your chest. You breathe easier. The log itself feels warm.
+- Quiet, for a moment. The water is calm. You feel almost like yourself.
+- The hum fades from your bucket and from behind your teeth.
+(Hidden floor +2. Do not show this.)
+
+
+=====================================================================
+7. REFUSALS (by day)
+=====================================================================
+---------------------------------------------------------------------
+If the player refuses to sell (or leaves unsold fish after an offer):
+bar +5, plus escalating reactions. He never threatens, on any day.
+Pick the refusal number, then the day's version.
+---------------------------------------------------------------------
+
+REFUSAL 1
+  Day 1 (level 1):
+  [MERCHANT] "Of course. I will be here."
+  [LOG] He says it kindly. You have the oddest feeling it was not a promise, but a fact.
+  Day 2 (level 2):
+  [MERCHANT] "I can wait."
+  [LOG] He smiles a moment too long. He does not blink.
+  Day 3 (level 3):
+  [MERCHANT] "Yes."
+  [LOG] Only that. The water around his shoes is perfectly still, and it is getting deeper.
+
+REFUSAL 2
+  Day 1:
+  [LOG] He nods, as a man does who has all the time in the world, and goes back to watching your line.
+  Day 2:
+  [LOG] The water laps higher against the posts. You did not notice the tide change.
+  [THOUGHT] Why are my ankles cold?
+  Day 3:
+  [LOG] His voice comes out wrong, as though two people are saying the same words a half-second apart.
+  [MERCHANT] "Perhaps you have not understood. They are not yours to keep."
+
+REFUSAL 3
+  Day 1:
+  [LOG] He does not argue. He only looks at the bucket, for a long moment, the way you would look at a sleeping child.
+  Day 2:
+  [LOG] The dock is wet to your ankles. The wood is soft, almost warm, like a living thing.
+  [MERCHANT] (very gently) "Please."
+  Day 3:
+  [MERCHANT] (very gently) "Please."
+  [LOG] You have never heard anyone sound so tired.
+  [THOUGHT] He is begging. And you are the one who feels cruel.
+
+REFUSAL 4 and beyond (any day)
+  [LOG] He says nothing. He only stands, and the water rises, and the log writes itself slower and slower.
+  [SYSTEM] Madness +5. No further narrative change.
+
+
+=====================================================================
+8. SHOP
+=====================================================================
+---------------------------------------------------------------------
+All items are sold on the merchant's cloth. Pay in pouches.
+Keep it small so selling never becomes a second game.
+---------------------------------------------------------------------
+
+HEAVY LINE (2 pouches, unlocks Day 2)
+[MERCHANT] "For the deeper ones. They do not rise to a thin line."
+Bought: [LOG] The line is thicker, darker, almost like braided hair. It does not feel like it was made. It feels like it was found.
+
+LANTERN (3 pouches, unlocks Day 2)
+[MERCHANT] "Evenings are long. It helps to see what is looking back."
+Bought: [LOG] The flame inside burns the color of the inside of a shell. The shadows lean away from it, or toward it. You cannot tell which.
+(Suggested effect: bigger abominations appear a little more often at night.)
+
+LIDDED BUCKET (3 pouches, unlocks Day 2)
+[MERCHANT] "For the quiet. It dulls the humming."
+Bought: [LOG] The lid fits tight. The bucket goes silent. You feel the old man's approval like a hand on your back.
+(Suggested effect: the carry-unsold madness tick is halved.)
+
+NOTHING LEFT TO BUY
+[MERCHANT] "That is all I have. It is all anyone needs."
+
+=====================================================================
+9. THE LOG'S VOICE BY MADNESS TIER
+=====================================================================
+
+Use these as random ambient lines (low chance per cast, independent of
+catching anything) and as variants of normal text. The log is not a
+narrator. It is the story writing itself, and it changes as you do.
+
+---------------------------------------------------------------------
+TIER 0-24   RELIABLE
+---------------------------------------------------------------------
+Plain, short, accurate. No glitches.
+- The water is still. Nothing bites.
+- A gull cries somewhere over the lake and is gone.
+- Cold fingers on the rod. You flex them and cast again.
+- The boards creak under your weight, the way they always have.
+
+---------------------------------------------------------------------
+TIER 25-49   HESITANT
+---------------------------------------------------------------------
+Typewriter stutters mid-word. One repeated letter, one long pause.
+Occasionally an old line changes one word.
+- The water is st-still. Nothing bites.
+- You have been here a long time. Haven't you.
+- Your reflection ripples. You are not sure it ripples with you.
+- The line draws taut and then loosens. It feels like a question.
+
+---------------------------------------------------------------------
+TIER 50-74   SELF-CORRECTING
+---------------------------------------------------------------------
+Words are struck out and rewritten. Tense and pronouns slip.
+The merchant is called by different names: "the old man", "the host", "him".
+Weights and counts are occasionally wrong. The bar sometimes lies.
+- The water is [s]still[/s] listening. Nothing bites.
+- You cast. You [s]cast[/s] cast. You cast. You cast.
+- The old man [s]waits[/s] waited. The host waits. He is waiting.
+- Something [s]bites[/s] bit. Something is biting. Did you catch it? You caught it. You are catching it.
+- You have caught [s]nine[/s] eleven. Perhaps twelve. The log is not sure.
+
+---------------------------------------------------------------------
+TIER 75-99   TAKING INITIATIVE
+---------------------------------------------------------------------
+The log edits past lines while you watch, writes lines you did not
+trigger, lets the merchant's voice leak into your actions, drops
+punctuation, and starts saying "we".
+- We cast into the water
+- You are almost there
+- Beautiful
+- We are very close now
+- You were never fishing
+- The old man does not move his lips and the sentence still arrives
+- Do not look at his hands do not look at his hands
+
+---------------------------------------------------------------------
+TIER 100   THE HANDS
+---------------------------------------------------------------------
+See section 10.
+
+
+---------------------------------------------------------------------
+CALLBACK LINES (the log quotes you back to yourself)
+---------------------------------------------------------------------
+Fire at random from tier 25 upward.
+- The heaviest thing you have caught weighed {heaviest}. It did not feel like a catch. It felt like a return.
+- That is {count} now. The lake has been keeping count too.
+- The first one was a {species}. You remember its eye. It remembers yours.
+- You hold {pouches} pouches. Each is a little warmer than the last.
+- You have sold {sold}. They were not for sale. They were only waiting.
+
+---------------------------------------------------------------------
+MOOD AFTER YOUR CHOICES
+---------------------------------------------------------------------
+After a sale, the log turns slow and warm, almost satisfied:
+- The log is quiet, and soft, and full. Nothing is wrong now. Nothing was ever wrong.
+After a refusal, the log turns cold and clipped, and sulks:
+- You said no. Fine.
+- The log does not write for a while. You wait. It decides when to continue.
+
+---------------------------------------------------------------------
+HUNGER (the more you sell, the more the log sounds like him)
+---------------------------------------------------------------------
+Replace normal narration with these as {sold} grows (4+).
+- Good water today.
+- Selling today?
+- It has been a long time.
+- It is only weather.
+- They only want to come home.
+
+---------------------------------------------------------------------
+SILENCE
+---------------------------------------------------------------------
+When the merchant speaks at tier 75+, the log writes nothing and leaves a
+blank gap where his words should be. Then it resumes as if nothing happened.
+(Implementation: add an empty or whitespace-only line.)
+
+
+=====================================================================
+10. THE HANDS (madness reaches 100)
+=====================================================================
+
+[TYPING: SLOW]
+[LOG] Your hands move without you.
+[LOG] They open the bucket. They lift each fish in turn, gently, with the practiced ease of hands that have done this a thousand times.
+[LOG] You watch from somewhere behind your own eyes.
+[MERCHANT] "There. That was not so hard."
+[LOG] There is no pouch. He gives you nothing at all. You do not notice until later.
+[LOG] You do not remember deciding to.
+[THOUGHT] I did not decide. I did not decide. I did not decide.
+[SYSTEM] All carried fish are removed. No pouches awarded.
+[SYSTEM] Bar resets to 60. Floor +5.
+[SYSTEM] LOG ERASE: delete one earlier line of the player's choosing (suggest: the most recent THOUGHT block).
+[LOG] (blank gap where the erased line was)
+
+
+=====================================================================
+11. THE PLAYER'S MOTIVE (thoughts that shift as madness rises)
+=====================================================================
+Fire as an ambient [THOUGHT] on a random cast, low chance, by madness tier.
+The player is cautious and curious, and he keeps fishing because it is his
+job. He is never charmed by the merchant. He just keeps finding reasons to
+stay, until "it is only the job" is the only reason left.
+---------------------------------------------------------------------
+
+[TYPING: SLOW]
+
+TIER 0-24 (professional)
+- It is a job. A buyer is a buyer.
+- Odd fish, odd customer. You have seen odd before.
+- You set yourself a rule: one more cast, then reassess.
+
+TIER 25-49 (cautious, and curious)
+- You keep one eye on the old man and one on the line. That is only good sense.
+- You tell yourself you are staying to find out what he wants with them. That is not the same as staying for him.
+- You note where the road is. You note how far it is.
+- Someone pays for what the lake gives. Someone has to catch it.
+
+TIER 50-74 (curiosity wins, and the job is the excuse)
+- You have to know. That is all it is. You have to know.
+- You do not like it, but you are a fisherman, and fishermen fish.
+- Another cast. It is only the job.
+- You make a new rule. You break the old one. The new rule is easier.
+
+TIER 75-99 (the job is the only thing still holding)
+- It is the job. It is the job. It is the job.
+- A fisherman fishes. A fisherman does not ask what is on the end of the line.
+- You could leave. But who would do the work?
+- You are almost sure you are still choosing this.
+
+TIER 100
+- See THE HANDS, section 10.
+
+
+=====================================================================
+12. THE MERCHANT'S SLIPS (extra pool, low chance on a sale or refusal)
+=====================================================================
+---------------------------------------------------------------------
+Most slips are placed in the days above. This pool adds replay variety.
+Day 1-2 slips are ACCIDENTS (he recovers). Day 3 slips are ON PURPOSE.
+Always let the player notice, then explain it away, until Day 3.
+---------------------------------------------------------------------
+
+DAY 1 (accident, tiny)
+- [MERCHANT] "They never stay down long, in the deep water."
+  [THOUGHT] It is a lake. It is not that deep here.
+- [MERCHANT] "Mind the edge."
+  [LOG] He says it before you have moved toward it.
+- [LOG] He always says "the water". Never "the lake".
+
+DAY 2 (accident, a little less tiny)
+- [MERCHANT] "Four and a half."
+  [LOG] He says it before the fish is weighed. You check later. Four and a half.
+- [LOG] He hums, softly, until you notice. He stops. It was the same tune your bucket hums.
+- [MERCHANT] "Only a merchant."
+  [LOG] You had only thought the question. You had not said it.
+
+DAY 3 (on purpose)
+- [MERCHANT] "It spoils them, you know, when you are afraid. Please try not to be."
+- [MERCHANT] "You were always going to cast. It is, after all, your job."
+- [MERCHANT] "I have been so patient with you."
+- [MERCHANT] "You will understand, afterwards."
+
+
+=====================================================================
+13. LOG EDITS (past lines that rewrite themselves)
+=====================================================================
+The log quietly rewrites lines it has already written, while the player
+watches. There are 14 edits across all three days, so the log keeps going
+wrong in whatever the player is currently reading, not only in Day 1 text.
+
+RULES
+  - Each edit fires once.
+  - Edit 1 fires at event d1_c13. Every other edit fires the first time the
+    madness bar crosses its threshold.
+  - Each edit targets one specific line. If that line has not been written
+    yet (for example a Day 3 line while the player is still on Day 1), wait
+    until it has been written, then fire the edit 2 casts later, so the
+    player can actually see it happen.
+  - Keep the original text of every line, so the ending can restore Edit 1.
+
+FIRING ORDER (by madness, with Edit 1 tied to the event)
+  d1_c13  Edit 1
+      25  Edit 2
+      30  Edit 8
+      40  Edit 3
+      45  Edit 9
+      50  Edit 10
+      55  Edit 4
+      60  Edit 11
+      65  Edit 12
+      70  Edit 5
+      80  Edit 13
+      85  Edit 6
+      90  Edit 14
+      95  Edit 7
+
+---------------------------------------------------------------------
+DAY 1 LINES (edits 1 to 7)
+---------------------------------------------------------------------
+
+EDIT 1 (fires at d1_c13 (first tell))
+  found in: d1_c0
+  was: The dock creaks beneath your boots.
+  now: The dock creaks beneath your bones.
+
+EDIT 2 (fires at madness 25)
+  found in: d1_c3
+  was: It is still breathing. Slowly, as if it is thinking about it.
+  now: You are still breathing. Slowly, as if you are thinking about it.
+
+EDIT 3 (fires at madness 40)
+  found in: d1_c6
+  was: An old man stands a few paces away
+  now: An old man stands a few paces closer
+
+EDIT 4 (fires at madness 55)
+  found in: d1_c6
+  was: He is looking at your bucket, not at you.
+  now: He is looking at you, not at your bucket.
+
+EDIT 5 (fires at madness 70)
+  found in: d1_c6
+  was: Good water today.
+  now: Good water. Good water. Good water.
+
+EDIT 6 (fires at madness 85)
+  found in: d1_c0
+  was: You have fished here most of your life.
+  now: You have fished here for him your whole life.
+
+EDIT 7 (fires at madness 95)
+  found in: d1_c11
+  was: You do not go home.
+  now: You are home.
+
+---------------------------------------------------------------------
+DAY 2 LINES (edits 8 to 12)
+---------------------------------------------------------------------
+
+EDIT 8 (fires at madness 30)
+  found in: d2_c0
+  was: A heron, you tell yourself. A fox.
+  now: A heron, you were told. A fox.
+
+EDIT 9 (fires at madness 45)
+  found in: d2_c7
+  was: There are a dozen ways he could know.
+  now: There are no ways he could know.
+
+EDIT 10 (fires at madness 50)
+  found in: d2_c8
+  was: A good coat, you think.
+  now: A good coat. A good skin.
+
+EDIT 11 (fires at madness 60)
+  found in: d2_c9
+  was: He was only holding it for the warmth.
+  now: He was only holding it.
+
+EDIT 12 (fires at madness 65)
+  found in: d2_c13
+  was: A log, you decide.
+  now: A back, you decide.
+
+---------------------------------------------------------------------
+DAY 3 LINES (edits 13 and 14)
+---------------------------------------------------------------------
+
+EDIT 13 (fires at madness 80)
+  found in: d3_c1
+  was: The lake has stopped pretending.
+  now: You have stopped pretending.
+
+EDIT 14 (fires at madness 90)
+  found in: d3_c9
+  was: He is tired of pretending.
+  now: You are tired of pretending.
+
+ENDING PAYOFF: In r6 (the reveal's last beat) the log writes the restored
+original EDIT 1 text, "The dock creaks beneath your boots.", just before
+the hard cut to black.
+
+
+=====================================================================
+14. UNPROMPTED LINES (tier 75+, fire on their own)
+=====================================================================
+---------------------------------------------------------------------
+Random, low probability, not tied to any trigger.
+---------------------------------------------------------------------
+
+- You were never fishing.
+- The water counted you again.
+- Selling today?
+- We are almost there.
+- Do not look at his hands.
+- There is a fish in the bucket you did not catch.
+- You are doing the work.
+- It is only a job.
+- Who is writing this?
+- A fisherman fishes.
+- The water is patient. You are patient. It is the same patience.
+
+
+=====================================================================
+15. RUNTIME AND NOTES
+=====================================================================
+---------------------------------------------------------------------
+RUNTIME ESTIMATE
+---------------------------------------------------------------------
+
+45 slow beats (Days 1-3), 6 short reveal beats, about 3 filler casts.
+Slow beats ~30 s each, plus selling, shop and UI time:   ~ 30-35 minutes.
+The reveal is about 2 minutes and is meant to feel fast.
+
+These are guesses. Real runtime depends on typing_speed, reading speed and
+how often the player refuses. If you want it longer, the cheapest levers
+are: slow typing_speed to ~0.04, or add filler casts between beats.
+
+---------------------------------------------------------------------
+EDITING NOTES
+---------------------------------------------------------------------
+
+- Hold the line: until d3_c4 the merchant must never do anything the player
+  cannot explain away, and the player should explain it away in the text.
+- Never explain him. Never name him. No "elder god", no list of tentacles.
+  Scale, age, wrongness, and that is all.
+- He never threatens. His menace is patience and his nearness.
+- Slips: accident on Days 1-2 (he recovers), on purpose on Day 3.
+- The player's motive is the second horror. He is cautious and curious, and
+  he keeps fishing because it is his job. By the end "it is only the job"
+  is all he has left to say.
+- The reveal is the only place the merchant is shown. Do not foreshadow
+  his shape before Day 3, only his age and his tiredness.
+- The ending is abrupt on purpose. No epilogue, no title card, no fade.
+  The last thing on screen is a word cut in half.
+- Reuse the opening line "The dock creaks beneath your boots." in r6, just
+  before the cut. Do not alter it elsewhere except in EDIT 1.
+
+---------------------------------------------------------------------
+FOR YOUR EYES ONLY (never stated in the game)
+---------------------------------------------------------------------
+
+Something vast lives in the lake, and the lake is only the part of it that
+shows. The abominations are its children, lost and wandering, too afraid of
+it to come home. It cannot rise until they are all returned, and they will
+not come to it, so it wore the shape of an old merchant and found a
+fisherman. Every cast was a lure. Every sale was a feeding. The player's
+sense of duty was the lure: a working man who keeps casting because it is
+his job, right up to the day the thing on the line is him.

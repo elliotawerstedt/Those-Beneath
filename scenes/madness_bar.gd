@@ -16,7 +16,7 @@ func make_madness_available():
 	
 	visible = true
 	madness_allowed = true
-	Global.first_abomination_caught = true
+	#Global.first_abomination_caught = true
 
 
 func fade_in():

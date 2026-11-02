@@ -21,6 +21,8 @@ func _ready() -> void:
 	# (You can also do this by hand in the editor via the Node tab,
 	# but connecting in code keeps everything in one place.)
 	pressed.connect(_on_pressed)
+	
+	modulate.a = 0.0
 
 
 func _process(_delta: float) -> void:
@@ -37,10 +39,20 @@ func _on_pressed() -> void:
 	Global.times_fished += 1 # Fishing counter
 	
 	# Triggers one time after fished a certain amount of times
-	if Global.times_fished > 2 and Global.first_abomination_caught == false:
-		Events.can_get_madness.emit()
-		Events.story_event_triggered.emit("first_abomination_caught")
-		return
+	match Global.times_fished:
+		1:
+			Events.story_event_triggered.emit("a_normal_start")
+			return
+		2:
+			#filler
+			return
+		3:
+			Events.can_get_madness.emit()
+			Events.story_event_triggered.emit("first_abomination_caught")
+			return
+		4:
+			Events.story_event_triggered.emit("the_bucket")
+			return
 
 	catch_fish()
 
